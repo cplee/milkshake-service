@@ -18,8 +18,4 @@ public class BananaServiceConfiguration {
       return new PingUrl();
     }
   
-    @Bean
-    public IRule ribbonRule(IClientConfig config) {
-      return new AvailabilityFilteringRule();
-    }
 }
