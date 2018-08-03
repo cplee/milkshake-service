@@ -1,6 +1,7 @@
 package com.stelligent.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import java.util.Map;
  * Created by casey.lee on 5/5/17.
  */
 @Component
+@RibbonClient(name = "banana-service", configuration = BananaServiceConfiguration.class)
 public class BananaProvider implements FlavorProvider {
 
   @Autowired
