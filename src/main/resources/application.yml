@@ -5,6 +5,8 @@ spring:
 eureka:
   client:
     enabled: false
+
+management.endpoints.web.base-path: /
 ---
 spring:
   profiles: mu
