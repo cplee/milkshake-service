@@ -8,4 +8,4 @@ spring:
 
 banana-service:
   ribbon:
-    listOfServers: banana-service.${_SERVICE_DISCOVERY_NAME}
+    listOfServers: banana-service.${_SERVICE_DISCOVERY_NAME}:8080
