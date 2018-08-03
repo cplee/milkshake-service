@@ -21,7 +21,7 @@ apply plugin: 'io.spring.dependency-management'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-jar.archiveName "milkshake-service.jar"
+bootJar.archiveName "milkshake-service.jar"
 
 repositories {
 	mavenCentral()
