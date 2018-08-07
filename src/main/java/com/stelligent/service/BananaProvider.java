@@ -1,5 +1,7 @@
 package com.stelligent.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.core.ParameterizedTypeReference;
@@ -23,6 +25,8 @@ public class BananaProvider implements FlavorProvider {
 
   @Autowired
   private RestTemplate restTemplate;
+
+  private Logger logger = LoggerFactory.getLogger(getClass());
 
   @Override
   public Flavor getFlavor() {
@@ -60,6 +64,7 @@ public class BananaProvider implements FlavorProvider {
             .findFirst()
             .get();
     URI uri = URI.create(url);
+    logger.info("uri:"+uri+" path:"+uri.getPath());
     this.restTemplate.delete("http://banana-service/{path}",uri.getPath());
   }
 }
