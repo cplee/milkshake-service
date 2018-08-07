@@ -64,7 +64,6 @@ public class BananaProvider implements FlavorProvider {
             .findFirst()
             .get();
     URI uri = URI.create(url);
-    logger.info("uri:"+uri+" path:"+uri.getPath());
-    this.restTemplate.delete("http://banana-service/{path}",uri.getPath());
+    this.restTemplate.delete("http://banana-service{path}",uri.getPath());
   }
 }
