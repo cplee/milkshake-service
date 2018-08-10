@@ -15,4 +15,4 @@ banana-service:
   ribbon:
     eureka:
       enabled: false
-    listOfServers: banana-service.${_SERVICE_DISCOVERY_NAME}:8080
+    listOfServers: banana-service.${_SERVICE_DISCOVERY_NAMESPACE}:8080
